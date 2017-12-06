@@ -1,0 +1,4 @@
+'.source.metal':
+  'fun':
+    'prefix': 'fun'
+    'body': "fun"

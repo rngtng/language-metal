@@ -1,0 +1,111 @@
+'scopeName': 'source.metal'
+'name': 'Metal'
+'fileTypes': [
+	'mtl'
+]
+'foldingStartMarker': '\\(\\s*$'
+'foldingStopMarker': '^\\s*\\)'
+
+'patterns': [
+	{'include': '#comments'}
+	{'include': '#sections'}
+	{'include': '#literals'}
+	{'include': '#properties'}
+	{'include': '#keywords'}
+]
+
+'repository':
+	'comments':
+		'patterns': [
+				{
+					'match': '#.*'
+					'name': 'comment.number-sign'
+				}
+				{
+					'match': '\\/\\/.*'
+					'name': 'comment.double-slash'
+				}
+				{
+					'begin': '\\/\\*'
+					'end': '\\*\\/'
+					'name': 'comment.block'
+				}
+		]
+	'primitives':
+		'patterns': [
+			{
+				'match': '\\b(?:true|false)\\b'
+				'name': 'constant.language'
+			}
+			{
+				'match': '\\b(?:\\d+[kKmMgG]?b?)\\b'
+				'name': 'constant.numeric'
+			}
+			{'include': '#strings'}
+		]
+	'strings':
+		'patterns': [
+			{
+				'comment': 'Terraform claims it only uses double-quoted strings'
+				'begin': '"'
+				'end': '"'
+				'name': 'string.interpolated'
+				'contentName': 'entity'
+			}
+		]
+	'literals':
+		'patterns': [
+			{'include': '#primitives'}
+			{'include': '#lists'}
+		]
+	'lists':
+		'patterns': [
+			{
+				'name': 'language.list'
+				'begin': '\\['
+				'end': '\\]'
+				'patterns': [
+					{'include': '#primitives'}
+					{'match': ','}
+				]
+			}
+		]
+	'sections':
+		'patterns': [
+			{
+				'begin': '(\\w+)\\s*((:?"(\\w|-)*"\\s*)*)\\s*(\\{)'
+				'beginCaptures':
+					'1':
+						'name': 'entity.name.section'
+					'2':
+						'name': 'variable.parameter'
+					'3':
+						'name': 'punctuation.section.begin'
+				'end': '(\\})'
+				'endCaptures':
+					'1':
+						'name': 'punctuation.section.end'
+				'name': 'meta.section'
+				'patterns': [
+					{'include': '$base'}
+				]
+			}
+		]
+	'properties':
+		'patterns': [
+			{
+				'match': '\\b(count|depends_on|lifecycle|create_before_destroy|ignore_changes|prevent_destroy)\\b\\s*(=)'
+				'captures':
+					'1':
+						'name': 'support.variable'
+					'2':
+						'name': 'punctuation.assignment'
+			}
+		]
+	'keywords':
+		'patterns': [
+			{
+				'match': '\\b(fun|var|type|const|if|then|for)\\b'
+				'name': 'support.type'
+			}
+		]
