@@ -1,7 +1,7 @@
 {
   "name": "language-metal",
   "main": "./lib/language-metal2",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Metal support for Atom",
   "keywords": [
     "nabaztag",
@@ -16,7 +16,6 @@
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "readmeFilename": "README.md"
 }
