@@ -1,4 +1,6 @@
-# http://manual.macromates.com/en/language_grammars
+# If this is your first time writing a language grammar, check out:
+#   - http://manual.macromates.com/en/language_grammars
+
 'scopeName': 'source.metal'
 'name': 'Metal'
 'fileTypes': [

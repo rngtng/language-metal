@@ -1,6 +1,5 @@
 {
   "name": "language-metal",
-  "main": "./lib/language-metal2",
   "version": "0.3.0",
   "description": "Metal support for Atom",
   "keywords": [
@@ -8,14 +7,10 @@
     "mtl",
     "metal"
   ],
-  "activationCommands": {
-    "atom-workspace": "language-metal:toggle"
-  },
   "repository": "https://github.com/rngtng/language-metal",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {},
   "readmeFilename": "README.md"
 }
