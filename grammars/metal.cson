@@ -1,0 +1,63 @@
+# http://manual.macromates.com/en/language_grammars
+'scopeName': 'source.metal'
+'name': 'Metal'
+'fileTypes': [
+	'mtl'
+]
+'foldingStartMarker': '\\(\\s*$'
+'foldingStopMarker': '^\\s*\\)'
+
+'patterns': [
+	{'include': '#comments'}
+	{'include': '#primitives'}
+	{'include': '#keywords'}
+	{'include': '#functions'}
+]
+
+'repository':
+	'comments':
+		'patterns': [
+				{
+					'match': '\\/\\/.*'
+					'name': 'comment.double-slash'
+				}
+		]
+	'primitives':
+		'patterns': [
+			{
+				'match': '\\b(?:nil)\\b'
+				'name': 'constant.language'
+			}
+			{
+				'match': '\\b(?:\\d+)\\b'
+				'name': 'constant.numeric'
+			}
+			{'include': '#strings'}
+		]
+	'strings':
+		'patterns': [
+			{
+				'begin': '"'
+				'end': '"'
+				'name': 'string.interpolated'
+				'contentName': 'entity'
+			}
+		]
+	'keywords':
+		'patterns': [
+			{
+				'match': '\\b(fun|if|then|else|let|in|for|do)\\b'
+				'name': 'keyword.other.metal'
+			}
+	    {
+        'match': '\\b(var|const|type|proto)\\b'
+        'name': 'support.variable'
+      }
+		]
+	'functions':
+		'patterns': [
+			{
+				'match': '\\b(hd|tl|tabnew|manyTable|abs|min|max|rand|srand|StrNew|strset|strcpy|vstrcmp|strfind|strstr|strfindrev|strlen|strget|strsub|strcat|strcatlist|listtostr|yours|Htoi|itoa|CTOA|itoh|CTOH|itobin2|strcmp|crypt|uncrypt|listswitch|listswitchstr|led|motorset|motorget|button2|button3|load|save|loopcb|rfidGet|reboot|flashFirmware|gc|corePP|corePush|corePull|coreBit0|netCb|netsend|netState|netMac|NetChk|netSetmode|netscan|netAuth|netPmk|netRssi|netSeqAdd|strgetword|strputword|udpStart|udpCb|udpStop|udpSend|tcpOpen|tcpClose|tcpSend|tcpCb|tcpListen|tcpEnable|playStart|playFeed|PlayStop|RecStart|recstop|RecVol|sndVol|Playtime|sndRefresh|sndWrite|sndRead|sndFeed|sndAmpli|adp2wav|wav2adp|alaw2wav|wav2alaw|Secholn|SLecho|SLecholn|ILecho|ILecholn|Secho|Iecholn|IECHO|time|Time_ms|bytecode|envget|envset|rfidGetList|rfidRead|rfidWrite)\\b'
+				'name': 'support.function'
+			}
+		]
