@@ -4,6 +4,9 @@
   "version": "0.1.0",
   "description": "Metal support for Atom",
   "keywords": [
+    "nabaztag",
+    "mtl",
+    "metal"
   ],
   "activationCommands": {
     "atom-workspace": "language-metal:toggle"
