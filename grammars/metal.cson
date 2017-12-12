@@ -56,7 +56,7 @@
 	'keywords':
 		'patterns': [
 			{
-				'match': '\\b(fun|if|then|else|let|in|for|do)\\b'
+				'match': '\\b(fun|if|ifdef|then|else|let|set|in|for|do)\\b'
 				'name': 'keyword.other.metal'
 			}
 	    {
@@ -67,7 +67,15 @@
 	'functions':
 		'patterns': [
 			{
-				'match': '\\b(hd|tl|tabnew|manyTable|abs|min|max|rand|srand|strnew|strset|strcpy|vstrcmp|strfind|strstr|strfindrev|strlen|strget|strsub|strcat|strcatlist|listtostr|yours|htoi|itoa|ctoa|itoh|ctoh|itobin2|strcmp|crypt|uncrypt|listswitch|listswitchstr|led|motorset|motorget|button2|button3|load|save|loopcb|rfidGet|reboot|flashFirmware|gc|corePP|corePush|corePull|coreBit0|netCb|netsend|netState|netMac|NetChk|netSetmode|netscan|netAuth|netPmk|netRssi|netSeqAdd|strgetword|strputword|udpStart|udpCb|udpStop|udpSend|tcpOpen|tcpClose|tcpSend|tcpCb|tcpListen|tcpEnable|playStart|playFeed|PlayStop|RecStart|recstop|RecVol|sndVol|Playtime|sndRefresh|sndWrite|sndRead|sndFeed|sndAmpli|adp2wav|wav2adp|alaw2wav|wav2alaw|Secholn|SLecho|SLecholn|ILecho|ILecholn|Secho|Iecholn|IECHO|time|Time_ms|bytecode|envget|envset|rfidGetList|rfidRead|rfidWrite)\\b'
+				'match': '\\b(hd|tl|tabnew|manyTable|abs|min|max|rand|srand|strnew|strset|strcpy|vstrcmp|strfind|strfindrev|strlen|strget|strsub|strcat|strcatlist|htoi|itoa|ctoa|itoh|ctoh|itobin2|strcmp|crypt|uncrypt|listswitch|listswitchstr|led|motorset|motorget|button2|button3|load|save|loopcb|rfidGet|reboot|flashFirmware|gc|corePP|corePush|corePull|coreBit0|netCb|netsend|netState|netMac|NetChk|netSetmode|netscan|netAuth|netPmk|netRssi|netSeqAdd|strgetword|strputword|udpStart|udpCb|udpStop|udpSend|tcpOpen|tcpClose|tcpSend|tcpCb|tcpListen|tcpEnable|playStart|playFeed|PlayStop|RecStart|recstop|RecVol|sndVol|Playtime|sndRefresh|sndWrite|sndRead|sndFeed|sndAmpli|adp2wav|wav2adp|alaw2wav|wav2alaw|Secholn|Secho|Iecholn|Iecho|time|Time_ms|bytecode|envget|envset|rfidGetList|rfidRead|rfidWrite)\\b'
 				'name': 'support.function'
+			}
+			{
+				'match': '\\b(currentT)\\b'
+				'name': 'support.function2'
+			}
+			{
+				'match': '\\b(strstr|listtostr|SLecho|SLecholn|ILecho|ILecholn)\\b'
+				'name': 'support.function3'
 			}
 		]
