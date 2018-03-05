@@ -23,6 +23,11 @@
 					'match': '\\/\\/.*'
 					'name': 'comment.double-slash'
 				}
+				{
+					'begin': '/\\*'
+				 	'end': '\\*/'
+				 	'name': 'comment.block'
+				}
 		]
 	'primitives':
 		'patterns': [
@@ -56,7 +61,7 @@
 	'keywords':
 		'patterns': [
 			{
-				'match': '\\b(fun|if|ifdef|then|else|let|set|in|for|do)\\b'
+				'match': '\\b(fun|if|ifdef|endif|then|else|let|set|in|for|do|define|include)\\b'
 				'name': 'keyword.other.metal'
 			}
 	    {
