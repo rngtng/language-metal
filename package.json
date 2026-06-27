@@ -1,16 +1,46 @@
 {
   "name": "language-metal",
+  "displayName": "Metal Language",
   "version": "0.3.6",
-  "description": "Metal support for Atom",
+  "description": "Metal (Nabaztag .mtl) syntax highlighting",
   "keywords": [
     "nabaztag",
     "mtl",
     "metal"
   ],
-  "repository": "https://github.com/rngtng/language-metal",
-  "license": "MIT",
-  "engines": {
-    "atom": ">=1.0.0 <2.0.0"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rngtng/language-metal"
   },
-  "readmeFilename": "README.md"
+  "license": "MIT",
+  "publisher": "rngtng",
+  "engines": {
+    "vscode": "^1.0.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "metal",
+        "aliases": ["Metal", "metal"],
+        "extensions": [".mtl"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "metal",
+        "scopeName": "source.metal",
+        "path": "./syntaxes/metal.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "metal",
+        "path": "./snippets/metal.json"
+      }
+    ]
+  }
 }

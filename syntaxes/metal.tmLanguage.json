@@ -1,0 +1,80 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Metal",
+  "scopeName": "source.metal",
+  "fileTypes": ["mtl"],
+  "foldingStartMarker": "\\(\\s*$",
+  "foldingStopMarker": "^\\s*\\)",
+  "patterns": [
+    {"include": "#comments"},
+    {"include": "#primitives"},
+    {"include": "#keywords"},
+    {"include": "#functions"}
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "match": "\\/\\/.*",
+          "name": "comment.line.double-slash.metal"
+        },
+        {
+          "begin": "/\\*",
+          "end": "\\*/",
+          "name": "comment.block.metal"
+        }
+      ]
+    },
+    "primitives": {
+      "patterns": [
+        {
+          "match": "\\b(?:nil)\\b",
+          "name": "constant.language.metal"
+        },
+        {
+          "match": "\\b(?:0x[abcdefABCDEF\\d]+)\\b",
+          "name": "constant.numeric.hex.metal"
+        },
+        {
+          "match": "\\b(?:\\d+)\\b",
+          "name": "constant.numeric.metal"
+        },
+        {
+          "match": "\\b(?:[A-Z][A-Z_\\d]+)\\b",
+          "name": "constant.character.metal"
+        },
+        {"include": "#strings"}
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "begin": "\"",
+          "end": "\"",
+          "name": "string.quoted.double.metal",
+          "contentName": "entity.name.metal"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "match": "\\b(fun|if|ifdef|endif|then|else|let|set|in|for|do|define|include)\\b",
+          "name": "keyword.other.metal"
+        },
+        {
+          "match": "\\b(var|const|type|proto)\\b",
+          "name": "storage.type.metal"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "match": "\\b(hd|tl|tabnew|manyTable|abs|min|max|rand|srand|strnew|strset|strcpy|vstrcmp|strfind|strfindrev|strlen|strget|strsub|strcat|strcatlist|htoi|itoa|ctoa|itoh|ctoh|itobin2|strcmp|crypt|uncrypt|listswitch|listswitchstr|led|motorset|motorget|button2|button3|load|save|loopcb|rfidGet|reboot|flashFirmware|gc|corePP|corePush|corePull|coreBit0|netCb|netsend|netState|netMac|NetChk|netSetmode|netscan|netAuth|netPmk|netRssi|netSeqAdd|strgetword|strputword|udpStart|udpCb|udpStop|udpSend|tcpOpen|tcpClose|tcpSend|tcpCb|tcpListen|tcpEnable|playStart|playFeed|PlayStop|RecStart|recstop|RecVol|sndVol|Playtime|sndRefresh|sndWrite|sndRead|sndFeed|sndAmpli|adp2wav|wav2adp|alaw2wav|wav2alaw|Secholn|Secho|Iecholn|Iecho|time|Time_ms|bytecode|envget|envset|rfidGetList|rfidRead|rfidWrite|currentT|strstr|listtostr|SLecho|SLecholn|ILecho|ILecholn)\\b",
+          "name": "support.function.metal"
+        }
+      ]
+    }
+  }
+}
